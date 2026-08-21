@@ -14,25 +14,25 @@ class LoginPage extends StatelessWidget {
         ),
       ),
 
-      body: Padding(
-        padding: const EdgeInsets.only(top: 200, bottom: 200),
+      body: Center(
         child: Column(
           children: [
-            Expanded(
-              child: Container(
-                color: Colors.orange,
+          SizedBox(height: 60,),
+          Text("Login", style: TextStyle(fontSize: 28),),
+
+            Padding(
+              padding: const EdgeInsets.all(25),
+              child: TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(40),
+                  ),
+                 labelText: "Enter your name",
+                  suffixText: "@gmail.com"
+                ),
               ),
-            ),
-            Expanded(
-              child: Container(
-                   child: Image.asset("assets/asok.png"),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                color: Colors.green,
-              ),
-            ),
+            )
+
           ],
         ),
       )
