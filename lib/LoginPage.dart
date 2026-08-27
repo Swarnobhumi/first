@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -27,8 +28,23 @@ class LoginPage extends StatelessWidget {
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(40),
                   ),
-                 labelText: "Enter your name",
+                 labelText: "Enter your gmail",
                   suffixText: "@gmail.com"
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(25),
+              child: TextField(
+                keyboardType: TextInputType.emailAddress,
+                obscureText: true,
+                obscuringCharacter: "π",
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(40),
+                  ),
+                 labelText: "Enter your password",
+
                 ),
               ),
             )
