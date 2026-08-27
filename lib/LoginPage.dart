@@ -25,6 +25,10 @@ class LoginPage extends StatelessWidget {
               padding: const EdgeInsets.all(25),
               child: TextField(
                 decoration: InputDecoration(
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(color: Colors.green, width: 3)
+                    ),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(40),
                   ),
@@ -36,15 +40,24 @@ class LoginPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(25),
               child: TextField(
+                enabled: true,
                 keyboardType: TextInputType.emailAddress,
                 obscureText: true,
                 obscuringCharacter: "π",
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(
+                  disabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(color: Colors.blue, width: 5)
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(color: Colors.purple, width: 3)
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.orange, width: 3),
                     borderRadius: BorderRadius.circular(40),
                   ),
                  labelText: "Enter your password",
-
                 ),
               ),
             )
