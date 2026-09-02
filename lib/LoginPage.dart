@@ -51,13 +51,28 @@ class _LoginPageState extends State<LoginPage> {
             //
             // }, child: Text("Press me"))
 
-            Expanded(
-              flex: 4,
-              child: Container(color: Colors.red,),
-            ),
-            Expanded(
-              child: Container(color: Colors.brown,),
-            ),
+            // Expanded(
+            //   flex: 4,
+            //   child: Container(color: Colors.red,),
+            // ),
+            // Expanded(
+            //   child: Container(color: Colors.brown,),
+            // ),
+
+            Container(
+              margin: EdgeInsets.all(40),
+              width: 300,
+              height: 200,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(40),
+                color: Colors.orange,
+                boxShadow: [
+                  BoxShadow(color: Colors.blue, blurRadius: 20, spreadRadius: 15, offset: Offset(20, 0)),
+                  BoxShadow(color: Colors.brown, blurRadius: 20, spreadRadius: 15, offset: Offset(-30, 0)),
+                ]
+              ),
+            )
+
 
           ],
         ),
