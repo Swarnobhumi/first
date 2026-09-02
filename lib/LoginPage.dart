@@ -29,27 +29,35 @@ class _LoginPageState extends State<LoginPage> {
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: 100,),
-             AnimatedContainer(
-               duration: Duration(milliseconds: 400),
-               width: width,
-               height: height,
-               decoration: BoxDecoration(
-                 borderRadius: BorderRadius.circular(10),
-                 color: Colors.blue
-               ),
-             ),
-            SizedBox(height: 100,),
+            // SizedBox(height: 100,),
+            //  AnimatedContainer(
+            //    duration: Duration(milliseconds: 400),
+            //    width: width,
+            //    height: height,
+            //    decoration: BoxDecoration(
+            //      borderRadius: BorderRadius.circular(10),
+            //      color: Colors.blue
+            //    ),
+            //  ),
+            // SizedBox(height: 100,),
+            //
+            // ElevatedButton(onPressed: (){
+            //   // backend code
+            //   setState(() {
+            //     //        false
+            //     width = width==250?100:250;
+            //     height = height==200?100:200;
+            //   });
+            //
+            // }, child: Text("Press me"))
 
-            ElevatedButton(onPressed: (){
-              // backend code
-              setState(() {
-                //        false
-                width = width==250?100:250;
-                height = height==200?100:200;
-              });
-
-            }, child: Text("Press me"))
+            Expanded(
+              flex: 4,
+              child: Container(color: Colors.red,),
+            ),
+            Expanded(
+              child: Container(color: Colors.brown,),
+            ),
 
           ],
         ),
