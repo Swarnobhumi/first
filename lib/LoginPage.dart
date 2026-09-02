@@ -43,13 +43,11 @@ class _LoginPageState extends State<LoginPage> {
 
             ElevatedButton(onPressed: (){
               // backend code
-
               setState(() {
-                width = 100;
-                height = 100;
-
+                //        false
+                width = width==250?100:250;
+                height = height==200?100:200;
               });
-
 
             }, child: Text("Press me"))
 
