@@ -59,17 +59,29 @@ class _LoginPageState extends State<LoginPage> {
             //   child: Container(color: Colors.brown,),
             // ),
 
-            Container(
-              margin: EdgeInsets.all(40),
-              width: 300,
-              height: 200,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(40),
-                color: Colors.orange,
-                boxShadow: [
-                  BoxShadow(color: Colors.blue, blurRadius: 20, spreadRadius: 15, offset: Offset(20, 0)),
-                  BoxShadow(color: Colors.brown, blurRadius: 20, spreadRadius: 15, offset: Offset(-30, 0)),
-                ]
+            // Container(
+            //   margin: EdgeInsets.all(40),
+            //   width: 300,
+            //   height: 200,
+            //   decoration: BoxDecoration(
+            //     borderRadius: BorderRadius.circular(40),
+            //     color: Colors.orange,
+            //     boxShadow: [
+            //       BoxShadow(color: Colors.blue, blurRadius: 20, spreadRadius: 15, offset: Offset(20, 0)),
+            //       BoxShadow(color: Colors.brown, blurRadius: 20, spreadRadius: 15, offset: Offset(-30, 0)),
+            //     ]
+            //   ),
+            // )
+
+            SizedBox(height: 30,),
+            Card(
+              elevation: 20,
+              shadowColor: Colors.blue,
+              color: Colors.orange,
+              child: SizedBox(
+                width: 200,
+                height: 150,
+
               ),
             )
 
