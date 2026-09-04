@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sign_in_button/sign_in_button.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -10,6 +11,9 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   double width = 250, height = 200;
+  bool hidePass = true;
+  Icon passIcon = Icon(Icons.remove_red_eye);
+  bool isChecked = false;
   @override
   void initState() {
     super.initState();
@@ -92,7 +96,7 @@ class _LoginPageState extends State<LoginPage> {
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              SizedBox(height: 18,),
+              SizedBox(height: 18),
               Text(
                 "Enter Valid User Name & password\n to continue",
                 textAlign: TextAlign.center,
@@ -101,6 +105,161 @@ class _LoginPageState extends State<LoginPage> {
                   fontWeight: FontWeight.w400,
                 ),
               ),
+              SizedBox(height: 25),
+
+              Padding(
+                padding: const EdgeInsets.only(left: 30),
+                child: Align(
+                  alignment: Alignment.topLeft,
+                  child: Text("Email"),
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(40),
+                  ),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.email_outlined),
+                      hintText: "Email Address",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(40),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.only(left: 30, top: 15),
+                child: Align(
+                  alignment: Alignment.topLeft,
+                  child: Text("Password"),
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(40),
+                  ),
+                  child: TextField(
+                    obscureText: hidePass,
+                    decoration: InputDecoration(
+                      suffixIcon: InkWell(
+                        onTap: () {
+                          setState(() {
+                            if(hidePass==true){
+                              hidePass = false;
+                              passIcon = Icon(Icons.remove_red_eye_outlined);
+                            }
+                            else{
+                              hidePass = true;
+                              passIcon = Icon(Icons.remove_red_eye);
+                            }
+                          });
+                        },
+
+                        child: passIcon,
+                      ),
+                      prefixIcon: Icon(Icons.email_outlined),
+                      hintText: "Enter Password",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(40),
+                      ),
+                    ),
+                  ),
+
+                ),
+              ),
+
+              Row(
+                children: [
+                  SizedBox(width: 10,),
+                  Checkbox(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(6)
+                    ),
+                      value: isChecked,
+                      onChanged: (value) {
+                         setState(() {
+                           isChecked = value!;
+                         });
+                      },
+                  ),
+                  Text("Remember Me")
+                ],
+              ),
+
+              SizedBox(height: 20,),
+              Container(
+                width: 340,
+                height: 60,
+                decoration: BoxDecoration(
+                    color: Color(0xffffbd14),
+                    borderRadius: BorderRadius.circular(40),
+                ),
+              child: Center(child: Text("Log In", style: GoogleFonts.poppins(fontSize: 17, fontWeight: FontWeight.w600),)),
+              ),
+
+              SizedBox(height: 20,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(width: 150, height: 1,color: Colors.grey,),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10, right: 10),
+                    child: Text("OR"),
+                  ),
+                  Container(width: 150, height: 1,color: Colors.grey,),
+
+                ],
+              ),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: 150,
+                    child: SignInButton(
+                      padding: EdgeInsets.all(10),
+                      Buttons.google,
+                      onPressed: () {},
+                      text: "Google",
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 35,),
+                  SizedBox(
+                    width: 150,
+                    child: SignInButton(
+                      padding: EdgeInsets.all(17),
+                      Buttons.apple,
+                      onPressed: () {},
+                      text: "Apple",
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 60,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Haven't any account ?"),
+                  Text("  Sign Up", style: TextStyle(color: Colors.orangeAccent),)
+                ],
+              )
             ],
           ),
         ),
