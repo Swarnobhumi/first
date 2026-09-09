@@ -1,3 +1,4 @@
+import 'package:first/HomePage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sign_in_button/sign_in_button.dart';
@@ -17,6 +18,10 @@ class _LoginPageState extends State<LoginPage> {
   @override
   void initState() {
     super.initState();
+  }
+
+  void btnPressed(){
+    //code
   }
 
   @override
@@ -181,7 +186,7 @@ class _LoginPageState extends State<LoginPage> {
 
               Row(
                 children: [
-                  SizedBox(width: 10,),
+                  SizedBox(width: 20,),
                   Checkbox(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(6)
@@ -198,14 +203,23 @@ class _LoginPageState extends State<LoginPage> {
               ),
 
               SizedBox(height: 20,),
-              Container(
-                width: 340,
-                height: 60,
-                decoration: BoxDecoration(
-                    color: Color(0xffffbd14),
-                    borderRadius: BorderRadius.circular(40),
+              InkWell(
+                onTap: (){
+                  // page changing logic
+                 // Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage(),));
+
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()) );
+
+                },
+                child: Container(
+                  width: 340,
+                  height: 60,
+                  decoration: BoxDecoration(
+                      color: Color(0xffffbd14),
+                      borderRadius: BorderRadius.circular(40),
+                  ),
+                child: Center(child: Text("Log In", style: GoogleFonts.poppins(fontSize: 17, fontWeight: FontWeight.w600),)),
                 ),
-              child: Center(child: Text("Log In", style: GoogleFonts.poppins(fontSize: 17, fontWeight: FontWeight.w600),)),
               ),
 
               SizedBox(height: 20,),
@@ -230,7 +244,7 @@ class _LoginPageState extends State<LoginPage> {
                     child: SignInButton(
                       padding: EdgeInsets.all(10),
                       Buttons.google,
-                      onPressed: () {},
+                      onPressed: (){},
                       text: "Google",
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
@@ -243,7 +257,10 @@ class _LoginPageState extends State<LoginPage> {
                     child: SignInButton(
                       padding: EdgeInsets.all(17),
                       Buttons.apple,
-                      onPressed: () {},
+                      onPressed: (){
+                        //code
+                        
+                      },
                       text: "Apple",
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
