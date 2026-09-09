@@ -1,5 +1,5 @@
+import 'package:animate_gradient/animate_gradient.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,14 +12,19 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        systemOverlayStyle: SystemUiOverlayStyle(
-          // Status bar color
-          statusBarColor: Colors.blue,
-          // Status bar brightness (optional)
-          statusBarIconBrightness: Brightness.dark, // For Android (dark icons)
-          statusBarBrightness: Brightness.dark, // For iOS (dark icons)
-        ),
+
+      body:  AnimateGradient(
+        primaryColors: const [
+          Colors.blue,
+          Colors.pinkAccent,
+          Colors.white,
+        ],
+        secondaryColors: const [
+          Colors.black,
+          Colors.blueAccent,
+          Colors.white,
+        ],
+        child: Container(),
       ),
     );
   }
