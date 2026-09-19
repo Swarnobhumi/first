@@ -14,6 +14,8 @@ class _HomePageState extends State<HomePage> {
   // Tween Animation
   // Starting value & ending  value
   // 1...............10
+
+  // ripple effect
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,24 +25,35 @@ class _HomePageState extends State<HomePage> {
         child: Center(
           child: Column(
             children: [
-              SizedBox(height: 100),
 
               TweenAnimationBuilder(
-                tween: Tween<double>(begin: 50, end: currentValue),
-                duration: Duration(seconds: 1),
+                tween: Tween<double>(begin:0, end: 300),
+                duration: Duration(seconds: 6),
                 builder: (context, value, child) {
                   print(value);
                   return InkWell(
                     onTap: (){
-                      setState(() {
-                        currentValue = currentValue==50?250:50; //toggle function
-                      });
+
                     },
-                    child: Container(
-                      width: value,
-                      height: value,
-                      color: Colors.orange,
-                    ),
+                    child: Column(
+                      children: [
+                        for (int i = 0;i<17;i++)
+                        Row(
+                          children: [
+                            for (int i = 0;i<8;i++)
+                              Container(
+                                width: value,
+                                height: value,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(50),
+                                ),
+                              ),
+                          ],
+                        )
+
+                      ],
+                    )
                   );
                 },
               )
