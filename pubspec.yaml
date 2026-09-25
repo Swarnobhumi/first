@@ -38,6 +38,7 @@ dependencies:
   font_awesome_flutter: ^11.0.0
   sign_in_button: ^5.0.0
   animate_gradient: ^0.0.4
+  simple_ripple_animation: ^0.1.0
 
 dev_dependencies:
   flutter_test:
