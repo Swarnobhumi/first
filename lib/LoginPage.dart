@@ -235,7 +235,7 @@ class _LoginPageState extends State<LoginPage> {
                       child: Container(
                         width: 200,
                         height: 30,
-                        child: Center(child: Text(emailController.text.isEmpty?"Please Enter mail":emailController.text.contains("@gmail.com")==false?"Please Enter Valid Email":passController.text.isEmpty?"Please Enter Password":"Welcome", style: TextStyle(color: Colors.white),)),
+                        child: Center(child: Text((emailController.text.isEmpty && passController.text.isEmpty)?"Please Enter mail & password":emailController.text.contains("@gmail.com")==false?"Please Enter Valid Email":passController.text.isEmpty?"Please Enter Password":"Welcome", style: TextStyle(color: Colors.white),)),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           color: emailController.text.isEmpty?Colors.red:passController.text.isEmpty?Colors.red:Colors.green,
