@@ -19,6 +19,7 @@ class _LoginPageState extends State<LoginPage> {
   late FToast fToast;
   TextEditingController emailController = TextEditingController();
   TextEditingController passController = TextEditingController();
+  bool isPasswordEmpty = true;
 
 
   @override
@@ -165,6 +166,16 @@ class _LoginPageState extends State<LoginPage> {
                       borderRadius: BorderRadius.circular(40),
                     ),
                     child: TextField(
+                      onChanged: (value) {
+                        setState(() {
+                          if(value.isEmpty){
+                             isPasswordEmpty = true;
+                          }else{
+                            isPasswordEmpty = false;
+                          }
+                        });
+
+                      },
                       controller: passController,
                       obscureText: hidePass,
                       decoration: InputDecoration(
@@ -184,7 +195,7 @@ class _LoginPageState extends State<LoginPage> {
         
                           child: passIcon,
                         ),
-                        prefixIcon: Icon(Icons.numbers),
+                        prefixIcon: isPasswordEmpty==true?Icon(Icons.numbers):null,
                         hintText: "Enter Password",
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(40),
