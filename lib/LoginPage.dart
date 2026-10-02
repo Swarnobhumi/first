@@ -184,7 +184,7 @@ class _LoginPageState extends State<LoginPage> {
         
                           child: passIcon,
                         ),
-                        prefixIcon: Icon(Icons.email_outlined),
+                        prefixIcon: Icon(Icons.numbers),
                         hintText: "Enter Password",
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(40),
